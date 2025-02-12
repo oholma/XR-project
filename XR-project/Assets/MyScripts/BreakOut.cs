@@ -8,26 +8,25 @@ public class BreakOut: MonoBehaviour
 	public Transform person;
    	private bool isInRoom = true;
 
-    	void Start()
-    	{
+	void Start()
+	{
 		roomPosition = person.position;
 		action.action.Enable();
 		action.action.performed += ChangeLocation;
-    	}
+	}
 
-    	void ChangeLocation(InputAction.CallbackContext
-context)
-    	{
+	void ChangeLocation(InputAction.CallbackContext context)
+	{
 		if (!isInRoom)
 		{
-            		person.position = roomPosition;
+			person.position = roomPosition;
 			isInRoom = true;
-            	}
-            	else
-            	{
-			person.position = new Vector3(0, 0, -65);
-            		isInRoom = false;
 		}
-    	}
+		else
+		{
+			person.position = new Vector3(0, 0, -65);
+			isInRoom = false;
+		}
+	}
 }
 
